@@ -1,0 +1,32 @@
+﻿@using MVCLab04.Models
+
+@model List<news>
+@{
+    ViewBag.Title = "SelectAllNews";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<div class="container">
+    @foreach (var item in Model)
+    {
+       
+        <img src="~/img/@item.photo"
+             onerror="this.onerror=null;this.src =' @item.photo'; "
+             alt="Image not found" 
+             style="width:100%" />
+
+        <div class="content">
+            <label class="badge badge-warning">@item.date</label>
+            <label class="badge bg-danger"> @Html.DisplayFor(e => item.catogery.name)</label>
+            <h3>@item.title</h3>
+            <p>
+                @item.pref..
+                @Html.ActionLink("More...", "MoreInfo", "News", new { id = item.id }, new { @class = "c" })
+            </p>
+        </div>
+
+    }
+</div>
+
+
+

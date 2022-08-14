@@ -1,0 +1,44 @@
+﻿
+* {
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Arial;
+    font-size: 17px;
+    background-image: url("https://picsum.photos/1400/2000?grayscale");
+    margin: 0px 2px 2px 2px
+}
+
+.container {
+    position: relative;
+    max-width: 800px;
+    margin: 0 auto;
+}
+
+    .container img {
+        vertical-align: middle;
+        height: 200px;
+    }
+
+    .container .content {
+        position: relative;
+        bottom: 0;
+        background: rgb(0, 0, 0); /* Fallback color */
+        background: rgba(0, 0, 0, 0.5); /* Black background with 0.5 opacity */
+        color: #f1f1f1;
+        width: 100%;
+        padding: 20px;
+        margin: 2px 2px;
+        border-radius: 4px;
+    }
+
+.c {
+    color: #f1f1f1;
+    background-color: #02A9EA;
+    border-radius: 4px;
+}
+
+.b {
+    background: rgb(0, 0, 0);
+}

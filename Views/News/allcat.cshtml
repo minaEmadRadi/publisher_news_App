@@ -1,0 +1,31 @@
+﻿@using MVCLab04.Models
+@{
+    List<catogery> cat = ViewBag.cat;
+}
+
+
+
+@foreach (var item in cat)
+{
+    <li class="nav-item ">
+        @Html.ActionLink(item.name, "SelectByCatogery", "News", new { id = item.id }, new { @class = "nav-link " })
+    </li>
+}
+<li class="nav-item ">
+    @Html.ActionLink("All News", "SelectAllNews", "Home", new { @class = "nav-link" })
+</li>
+
+@if (Session["id"] != null)
+{
+    <li class="nav-item active ">
+        <div class="dropdown">
+            <button class="btn btn-outline-primary dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+            </button>
+            <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+                @Html.ActionLink("Add News", "Add", "News", Session["id"], new { @class = "dropdown-item" })
+                @Html.ActionLink("News", "SelectByUser", "News", Session["id"], new { @class = "dropdown-item" })
+                @Html.ActionLink("Edit Profile", "Edit", "User", Session["id"], new { @class = "dropdown-item" })
+            </div>
+        </div>
+    </li>
+}
