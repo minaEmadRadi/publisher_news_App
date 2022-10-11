@@ -3,9 +3,9 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Web;
 using System.Web.Mvc;
-using MVCLab04.Models;
+using News.Models;
 
-namespace MVCLab04.Controllers
+namespace News.Controllers
 {
     public class CatogeryController : Controller
     {

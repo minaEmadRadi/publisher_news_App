@@ -1,4 +1,4 @@
-﻿namespace MVCLab04.Migrations
+﻿namespace News.Migrations
 {
     using System;
     using System.Data.Entity.Migrations;

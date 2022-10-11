@@ -1,4 +1,4 @@
-namespace MVCLab04.Models
+namespace News.Models
 {
     using System;
     using System.Data.Entity;
@@ -15,7 +15,7 @@ namespace MVCLab04.Models
         public virtual DbSet<catogery> catogeries { get; set; }
         public virtual DbSet<news> news { get; set; }
         public virtual DbSet<user> users { get; set; }
-
+        //fluent API
         protected override void OnModelCreating(DbModelBuilder modelBuilder)
         {
             modelBuilder.Entity<catogery>()

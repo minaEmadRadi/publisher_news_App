@@ -1,4 +1,4 @@
-namespace MVCLab04.Models
+namespace News.Models
 {
     using System;
     using System.Collections.Generic;
@@ -18,11 +18,11 @@ namespace MVCLab04.Models
 
         public int id { get; set; }
 
-        [Required]
+        [Required(ErrorMessage ="cat cant be empty")]
         [StringLength(50)]
         [DisplayName("Name")]
         public string name { get; set; }
-
+        //navigation properties
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<news> news { get; set; }
     }

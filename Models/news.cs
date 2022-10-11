@@ -1,4 +1,4 @@
-namespace MVCLab04.Models
+namespace News.Models
 {
     using System;
     using System.Collections.Generic;

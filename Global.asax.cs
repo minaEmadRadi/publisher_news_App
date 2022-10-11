@@ -5,7 +5,7 @@ using System.Web;
 using System.Web.Mvc;
 using System.Web.Routing;
 
-namespace MVCLab04
+namespace News
 {
     public class MvcApplication : System.Web.HttpApplication
     {

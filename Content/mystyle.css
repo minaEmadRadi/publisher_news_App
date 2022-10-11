@@ -1,0 +1,51 @@
+﻿
+* {
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Arial;
+    font-size: 17px;
+    background-image: url("https://picsum.photos/1400/2000?grayscale");
+    margin: 0px 2px 2px 2px
+}
+
+.container {
+    position: relative;
+    max-width: 800px;
+    margin: 0 auto;
+}
+
+    .container img {
+        vertical-align: middle;
+        height: 200px;
+    }
+
+    .container .content {
+        position: relative;
+        bottom: 0;
+        background: rgb(0, 0, 0); /* Fallback color */
+        background: rgba(0, 0, 0, 0.5); /* Black background with 0.5 opacity */
+        color: #f1f1f1;
+        width: 100%;
+        padding: 20px;
+        margin: 2px 2px;
+        border-radius: 4px;
+    }
+
+.c {
+    color: #f1f1f1;
+    background-color: #02A9EA;
+    border-radius: 4px;
+}
+
+.b {
+    background: rgb(0, 0, 0);
+}
+.custom-toggler .navbar-toggler-icon {
+    background-image: url("data:image/svg+xml;charset=utf8,%3Csvg viewBox='0 0 32 32' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath stroke='rgba(255,102,203, 0.5)' stroke-width='2' stroke-linecap='round' stroke-miterlimit='10' d='M4 8h24M4 16h24M4 24h24'/%3E%3C/svg%3E");
+}
+
+.custom-toggler.navbar-toggler {
+    border-color: #b200ff;
+} 

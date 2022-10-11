@@ -1,18 +1,18 @@
-﻿namespace MVCLab04.Migrations
+﻿namespace News.Migrations
 {
     using System;
     using System.Data.Entity;
     using System.Data.Entity.Migrations;
     using System.Linq;
 
-    internal sealed class Configuration : DbMigrationsConfiguration<MVCLab04.Models.MERContext>
+    internal sealed class Configuration : DbMigrationsConfiguration<News.Models.MERContext>
     {
         public Configuration()
         {
             AutomaticMigrationsEnabled = false;
         }
 
-        protected override void Seed(MVCLab04.Models.MERContext context)
+        protected override void Seed(News.Models.MERContext context)
         {
             //  This method will be called after migrating to the latest version.
 
