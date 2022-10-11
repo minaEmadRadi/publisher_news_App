@@ -1,9 +1,8 @@
-﻿using System;
-using System.Collections.Generic;
+﻿using News.Models;
+using System;
 using System.Linq;
 using System.Web;
 using System.Web.Mvc;
-using News.Models;
 
 namespace News.Controllers
 {
@@ -11,7 +10,7 @@ namespace News.Controllers
     {
         // GET: User
         MERContext dctx = new MERContext();
-        
+
         public ActionResult Add()
         {
             return View();
@@ -19,10 +18,11 @@ namespace News.Controllers
         [HttpPost]
         public ActionResult Add(user user)
         {
-            if (ModelState.IsValid) { 
-            dctx.users.Add(user);
+            if (ModelState.IsValid)
+            {
+                dctx.users.Add(user);
                 dctx.SaveChanges();
-                                    }
+            }
             return RedirectToAction("Add");
         }
 
@@ -34,8 +34,8 @@ namespace News.Controllers
         [HttpPost]
         public ActionResult login(user user, bool remb)
         {
-   user u = dctx.users.Where(uu => uu.email == user.email && uu.password == user.password).FirstOrDefault();    
-            if (u!=null)
+            user u = dctx.users.Where(uu => uu.email == user.email && uu.password == user.password).FirstOrDefault();
+            if (u != null)
             {
                 if (remb)
                 {
@@ -46,7 +46,7 @@ namespace News.Controllers
                     Response.Cookies.Add(co);
                 }
                 Session["id"] = u.id;
-                return RedirectToAction("Index", "Home",new {id=u.id });
+                return RedirectToAction("Index", "Home", new { id = u.id });
             }
             else
             {
@@ -66,13 +66,13 @@ namespace News.Controllers
         public ActionResult Edit()
         {
             int id = int.Parse(Session["id"].ToString());
-              user u = dctx.users.Where(i => i.id == id).Single();
+            user u = dctx.users.Where(i => i.id == id).Single();
             return View(u);
         }
         [HttpPost]
         public ActionResult Edit(user user)
         {
-           
+
             if (ModelState.IsValid)
             {
                 int id = int.Parse(Session["id"].ToString());
@@ -95,25 +95,25 @@ namespace News.Controllers
             return View();
         }
         [HttpPost]
-        public ActionResult ChangePassword(user user,string pass)
+        public ActionResult ChangePassword(user user, string pass)
         {
 
             int id = int.Parse(Session["id"].ToString());
-                user u = dctx.users.Where(i => i.id == id).SingleOrDefault();
-                if (user.password!=u.password)
-                {
-                    ViewBag.message = "Old Pass Not Correct";
-                    return ChangePassword();
-                }
-            if (pass=="")
+            user u = dctx.users.Where(i => i.id == id).SingleOrDefault();
+            if (user.password != u.password)
+            {
+                ViewBag.message = "Old Pass Not Correct";
+                return ChangePassword();
+            }
+            if (pass == "")
             {
                 ViewBag.pass = "Invalid Password";
                 return ChangePassword();
             }
-                u.password = pass;
-                u.confirm = pass;
-                dctx.SaveChanges();     
-                return Logout();
+            u.password = pass;
+            u.confirm = pass;
+            dctx.SaveChanges();
+            return Logout();
         }
     }
 }

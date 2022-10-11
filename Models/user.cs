@@ -1,11 +1,9 @@
 namespace News.Models
 {
-    using System;
     using System.Collections.Generic;
     using System.ComponentModel;
     using System.ComponentModel.DataAnnotations;
     using System.ComponentModel.DataAnnotations.Schema;
-    using System.Data.Entity.Spatial;
 
     public partial class user
     {
@@ -17,21 +15,21 @@ namespace News.Models
 
         public int id { get; set; }
 
-        [Required(ErrorMessage ="*")]
+        [Required(ErrorMessage = "*")]
         [StringLength(50)]
         public string name { get; set; }
-        [EmailAddress(ErrorMessage ="Notcorrect")]
-        [Required(ErrorMessage ="*")]
+        [EmailAddress(ErrorMessage = "Notcorrect")]
+        [Required(ErrorMessage = "*")]
         [StringLength(50)]
         public string email { get; set; }
 
         [Required(ErrorMessage = "*")]
         [StringLength(50)]
-        
+
         public string password { get; set; }
         [NotMapped]
         [DisplayName("ConfirmPassword")]
-        [Compare("password",ErrorMessage="Not Matched")]
+        [Compare("password", ErrorMessage = "Not Matched")]
         [Required]
         public string confirm { get; set; }
 
@@ -39,4 +37,3 @@ namespace News.Models
         public virtual ICollection<news> news { get; set; }
     }
 }
- 

@@ -1,11 +1,9 @@
 namespace News.Models
 {
-    using System;
     using System.Collections.Generic;
     using System.ComponentModel;
     using System.ComponentModel.DataAnnotations;
     using System.ComponentModel.DataAnnotations.Schema;
-    using System.Data.Entity.Spatial;
 
     [Table("catogery")]
     public partial class catogery
@@ -18,7 +16,7 @@ namespace News.Models
 
         public int id { get; set; }
 
-        [Required(ErrorMessage ="cat cant be empty")]
+        [Required(ErrorMessage = "cat cant be empty")]
         [StringLength(50)]
         [DisplayName("Name")]
         public string name { get; set; }

@@ -1,11 +1,8 @@
 namespace News.Models
 {
     using System;
-    using System.Collections.Generic;
     using System.ComponentModel;
     using System.ComponentModel.DataAnnotations;
-    using System.ComponentModel.DataAnnotations.Schema;
-    using System.Data.Entity.Spatial;
 
     public partial class news
     {
@@ -32,9 +29,9 @@ namespace News.Models
         public int? catogery_id { get; set; }
         [DisplayName("Date and Time of News")]
 
-        [Required(ErrorMessage ="*")]
+        [Required(ErrorMessage = "*")]
         public DateTime date { get; set; }
-        
+
 
         public virtual catogery catogery { get; set; }
 
